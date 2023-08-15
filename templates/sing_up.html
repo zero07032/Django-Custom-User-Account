@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Sing Up{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h5 class="pt-5">Sing Up</h5>
+    <form action="" class="py-3" method="POST">
+
+        <!-- username -->
+        <div class="mb-3">
+            <label for="username" class="form-label">Username</label>
+            <input type="text" class="form-control" id="username" name="username" placeholder="zero">
+        </div>
+
+        <!-- email -->
+        <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" class="form-control" id="email" name="email" placeholder="zero@gmail.com">
+        </div>
+
+        <!-- account type-->
+        <div class="mb-3">
+            <label for="email" class="form-label">User Type</label>
+            <select class="form-select" aria-label="Default select example" name="user_type">
+                <option value="ADMIN">Admin</option>
+                <option value="TEACHER">Teacher</option>
+                <option value="STUDENT" selected>Student</option>
+            </select>
+        </div>
+
+        <!-- password -->
+        <div class="mb-3">
+            <label for="password" class="form-label">Password</label>
+            <input type="text" class="form-control" id="password" name="password" placeholder="****">
+        </div>
+        <button class="btn btn-info">Sing Up</button>
+    </form>
+</div>
+
+
+{% endblock %}
