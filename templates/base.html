@@ -28,21 +28,25 @@
                     <li class="nav-item">
                         <a class="nav-link active text-info" aria-current="page" href="/">Home</a>
                     </li>
+
+                    {% if request.user.is_authenticated %}
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle text-info" href="#" id="navbarDropdown" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false">
-                            mossaddak
+                            {{request.user.username}}
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="#">Logout</a></li>
+                            <li><a class="dropdown-item" href="{% url 'logout' %}">Logout</a></li>
                         </ul>
                     </li>
+                    {% else %}
                     <li class="nav-item">
-                        <a class="nav-link text-info" href="#" tabindex="-1">Sing Up</a>
+                        <a class="nav-link text-info" href="{% url 'singup' %}" tabindex="-1">Sing Up</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-info" href="#" tabindex="-1">Sing In</a>
+                        <a class="nav-link text-info" href="{% url 'singin' %}" tabindex="-1">Sing In</a>
                     </li>
+                    {% endif %}
                 </ul>
             </div>
         </div>

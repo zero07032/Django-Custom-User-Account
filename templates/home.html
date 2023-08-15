@@ -4,7 +4,11 @@
 
 {% block content %}
 <div class="container py-5" style="height: 70vh;">
-    Hello, <b>zero</b><br>
-    You're wellcome as a <b>Admin</b>
+    {% if request.user.is_authenticated %}
+    Hello, <b>{{request.user.username}}</b><br>
+    You're wellcome as a <b>{{request.user.user_type}}</b>
+    {% else %}
+    <p class="text-danger">Log into your account</p>
+    {% endif %}
 </div>
 {% endblock %}
